@@ -19,8 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{A1AB8E75-1834-4226-B7CE-9623B1D7444F}</ProjectGuid>
-    <RootNamespace>Mirage3D</RootNamespace>
+    <ProjectGuid>{AC44283F-3115-46F3-B9F8-04022B8B19BC}</ProjectGuid>
+    <RootNamespace>Direct3D11Engine</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -74,10 +74,10 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>Additional\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Mirage\Desktop\Direct3D11Engine\Direct3D11Engine\Additional\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>Additional\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\Mirage\Desktop\Direct3D11Engine\Direct3D11Engine\Additional\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>DirectXTexd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -95,10 +95,13 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\Users\Mirage\Desktop\Direct3D11Engine\Direct3D11Engine\Additional\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>C:\Users\Mirage\Desktop\Direct3D11Engine\Direct3D11Engine\Additional\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>DirectXTex.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -114,23 +117,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="Camera.h" />
-    <ClInclude Include="Cube.h" />
-    <ClInclude Include="DataStructures.h" />
-    <ClInclude Include="DirectionalLight.h" />
-    <ClInclude Include="Engine.h" />
-    <ClInclude Include="GameTimer.h" />
-    <ClInclude Include="GameWindow.h" />
-    <ClInclude Include="Graphics.h" />
-    <ClInclude Include="InputEvent.h" />
-    <ClInclude Include="InputManager.h" />
-    <ClInclude Include="Object.h" />
-    <ClInclude Include="Plane.h" />
-    <ClInclude Include="Scene.h" />
-    <ClInclude Include="ShaderManager.h" />
-    <ClInclude Include="Sphere.h" />
-  </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Cube.cpp" />
@@ -149,9 +135,30 @@
     <ClCompile Include="Sphere.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Shaders\basic.hlsl">
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="Cube.h" />
+    <ClInclude Include="DataStructures.h" />
+    <ClInclude Include="DirectionalLight.h" />
+    <ClInclude Include="Engine.h" />
+    <ClInclude Include="GameTimer.h" />
+    <ClInclude Include="GameWindow.h" />
+    <ClInclude Include="Graphics.h" />
+    <ClInclude Include="InputEvent.h" />
+    <ClInclude Include="InputManager.h" />
+    <ClInclude Include="Object.h" />
+    <ClInclude Include="Plane.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="ShaderManager.h" />
+    <ClInclude Include="Sphere.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shaders\basic.hlsl">
       <FileType>Document</FileType>
-    </Text>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
     <Text Include="Shaders\default.hlsl">
       <FileType>Document</FileType>
     </Text>
